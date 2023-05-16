@@ -1,14 +1,13 @@
 import "./App.css";
+import { useState } from "react";
 
-const [firstCity, secondCity, thirdCity] = ["Tokyo", "Singapore", "Istanbul"];
-console.log(
-  `I want to go to ${firstCity} but maybe not ${secondCity}. And I've already been to ${thirdCity}`
-);
-
-function App({ library }) {
+function App() {
+  const [emotion, setEmotion] = useState("happy");
+  console.log(emotion);
   return (
     <div className='App'>
-      <h1>Hello from {library}</h1>
+      <h1>Current emotion is {emotion}</h1>
+      <button onClick={() => setEmotion("depressed")}>Depressed 😔</button>
     </div>
   );
 }
