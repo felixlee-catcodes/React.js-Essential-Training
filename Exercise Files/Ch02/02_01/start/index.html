@@ -31,6 +31,9 @@
             <p className="about">
               A Collection of {props.adj1} & {props.adj2} Instruments/Wish List 
             </p>
+            <ul>
+              {props.instrumentsObj.map((i) => (<li key={i.id}>{i.title}</li>))}
+            </ul>
             </section>
         )
       }
@@ -43,11 +46,25 @@
         )
       }
 
+      const instruments = [
+        'Guqin', 
+        'Theremin',
+        'Kora', 
+        'Hang Drum',
+        'Oboe',
+        'Shamisen'
+      ]
+
+      const instrumentsObj = instruments.map((inst, i)=> ({
+        id: i, 
+        title: inst
+      }))
+
       function App() {
         return (
           <>
           <Header name='Felix'/>
-          <Main adj1='Unique' adj2='Exotic'/>
+          <Main adj1='Unique' adj2='Exotic' instrumentsObj={instrumentsObj}/>
           <Footer year={new Date().getFullYear()}/>
           </>
         )
