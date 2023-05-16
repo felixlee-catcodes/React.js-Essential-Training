@@ -16,18 +16,45 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-      let angel = '😇'
-      let kiss = '😙'
-      let frown = '😕'
-      let flag = '🇦🇹'
-     
+      function Header(props){
+        console.log(props)
+        return (
+          <header>
+            <h1>{props.name}'s' Instrument Bazaar</h1>
+            </header>
+        )
+      }
+
+      function Main(props){
+        return (
+          <section>
+            <p className="about">
+              A Collection of {props.adj1} & {props.adj2} Instruments/Wish List 
+            </p>
+            </section>
+        )
+      }
+
+      const Footer = (props) => {
+        return (
+          <footer>
+            <p>C. Felix Lee © {props.year}</p>
+            </footer>
+        )
+      }
+
+      function App() {
+        return (
+          <>
+          <Header name='Felix'/>
+          <Main adj1='Unique' adj2='Exotic'/>
+          <Footer year={new Date().getFullYear()}/>
+          </>
+        )
+      }
       ReactDOM.render( 
-        <ul>
-          <li>{angel}</li>
-          <li>{kiss}</li>
-          <li>{frown}</li>
-          <li>{flag}</li>
-        </ul>,
+        <App/>
+        ,
         document.getElementById('root')
       )
     </script>
