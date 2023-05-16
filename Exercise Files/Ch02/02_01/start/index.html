@@ -63,11 +63,11 @@
 
       function App() {
         return (
-          <>
+          <React.Fragment>
           <Header name='Felix'/>
           <Main adj1='Unique' adj2='Exotic' instrumentsObj={instrumentsObj}/>
           <Footer year={new Date().getFullYear()}/>
-          </>
+          </React.Fragment>
         )
       }
       ReactDOM.render( 
